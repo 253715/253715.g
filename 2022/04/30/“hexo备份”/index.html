@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="追番列表, 学技术的小凯">
-    <meta name="description" content="疯狂学技术">
+    <meta name="keywords" content="“hexo备份”, 学技术的小凯">
+    <meta name="description" content="hexo备份前言​    使用Hexo在github搭建的博客，博客作为一个单独的GitHub仓库存在，但是这个仓库只有生成的静态网页文件，并没有Hexo的源文件，如果要换电脑或者重装系统后，就比较麻烦了，这里推荐一种方法。
+原理我们的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
 
     
 
-    <title>追番列表 | 学技术的小凯</title>
+    <title>“hexo备份” | 学技术的小凯</title>
     <link rel="icon" type="image/png" href="/253715/253715.github.io.git/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/253715/253715.github.io.git/libs/awesome/css/all.min.css">
@@ -442,12 +443,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/253715/253715.github.io.git/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/253715/253715.github.io.git/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">追番列表</h1>
+                    <h1 class="description center-align post-title">“hexo备份”</h1>
                 </div>
             </div>
         </div>
@@ -561,12 +562,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/253715/253715.github.io.git/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/253715/253715.github.io.git/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
+                                博客
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -589,14 +603,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    421
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -619,67 +633,85 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="hexo备份"><a href="#hexo备份" class="headerlink" title="hexo备份"></a>hexo备份</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    使用Hexo在github搭建的博客，博客作为一个单独的GitHub仓库存在，但是这个仓库只有生成的静态网页文件，并没有Hexo的源文件，如果要换电脑或者重装系统后，就比较麻烦了，这里推荐一种方法。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>我们的博客是托管到 GitHub（Coding） 上的。而我们每次上传（<code>hexo d</code>）的是网页文件，不是我们的文章，所以我们如果想上传文章，但同时不会干扰到网页部署，就在 GitHub 的博客仓库上建立一个分支 hexo。</p>
+<p>这个 hexo 分支的作用就是用来保存我的博客所有文件。所以第一步我们就获得了博客仓库的 .git 文件夹，作用就是利用它连接到我们的博客仓库，而且建立分支 hexo。所以拿到这个文件夹，我们就把除了它的其他文件删掉。</p>
+<p>然后利用这个分支，把我们的 MarkDown 文章和其他文件上传到 GitHub 托管。这样 <code>hexo d</code>推送的是 master 分支，而 <code>git push</code> 推送的是 hexo 分支，互不干扰。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-获取-git文件"><a href="#1-获取-git文件" class="headerlink" title="1. 获取.git文件"></a>1. 获取.git文件</h3><ol>
+<li><p>我们先建立一个文件夹，名字随便，我这里叫 hexo，在该文件夹空白处，启动 GitBash</p>
+</li>
+<li><p>先克隆我们博客的仓库</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https://e.coding.net/fenghen0918/fenghen0918.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<p>这里仅仅只是为了获得版本管理的 <strong>.git</strong> 隐藏文件夹。</p>
+<h3 id="2-建立分支"><a href="#2-建立分支" class="headerlink" title="2. 建立分支"></a>2. 建立分支</h3><p>建立一个分支，我这里分支名为 hexo ，输入代码</p>
+<pre class="line-numbers language-none"><code class="language-none">git checkout -b hexo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-清空-hexo-分支"><a href="#3-清空-hexo-分支" class="headerlink" title="3. 清空 hexo 分支"></a>3. 清空 hexo 分支</h3><p>克隆下来的都是编译后的静态页面，直接删除留下.git即可。</p>
+<ol>
+<li>删除除了 .git 文件夹的所有文件。我们只需要这个版本管理，在删除后通过代码 <code>git status</code> 查看</li>
+</ol>
+<p><img src="https://gitee.com/rising-silently/git/raw/master/img/20220430201741.png" alt="img"></p>
+<ol>
+<li><p>增加到暂存区</p>
+<pre class="line-numbers language-none"><code class="language-none">git add --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>提交到本地仓库</p>
+<pre class="line-numbers language-none"><code class="language-none">git commit -m  "清空hexo分支仓库"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>最后我们推送到远端更新</p>
+<pre class="line-numbers language-none"><code class="language-none">git push --set-upstream origin hexo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<p>这里同时设置了以后默认为hexo分支，回到博客的根目录下就能看到。</p>
+<p><img src="https://gitee.com/rising-silently/git/raw/master/img/20220430202000.png" alt="image-20220430202000179"></p>
 <blockquote>
-    <p>生命不息，追番不止！</p>
+<p>注意：这时默认分支为hexo，但博客部署的还是master分支，此配置在config.yml中配置的</p>
+<pre class="line-numbers language-none"><code class="language-none">deploy:
+  type: git
+  repo: https://github.com/Witman1999/Witman1999.github.io.git
+  branch: master #提交的默认分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
+<h3 id="4-移动-git文件"><a href="#4-移动-git文件" class="headerlink" title="4. 移动.git文件"></a>4. 移动.git文件</h3><p>把 .git 文件夹移动到博客的根目录下</p>
+<h3 id="5-提交源文件"><a href="#5-提交源文件" class="headerlink" title="5. 提交源文件"></a>5. 提交源文件</h3><blockquote>
+<p>注意：如果你的主题文件，是克隆 Github 下来的，那么会带有该主题的 Github 的 .git 版本管理文件，也就是 .git 文件夹。所以主题下面的要删除 .git 文件夹和 .gitignore 文件，否则会忽略这个 next 主题的上传。</p>
+</blockquote>
+<p>推送 Github 的仓库的步骤，在博客的根目录下，输入</p>
+<pre class="line-numbers language-none"><code class="language-none">git add --all
+git commit -m “提交源文件”
+git push （这里要确保提交的分支为 hexo ，在前面的步骤可以查看，如果不是可以输入 git checkout hexo切换分支）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<style>
-    .bangumi-tabs{margin-bottom:15px;margin-top:15px}.bangumi-tab{padding:5px}a.bangumi-tab{text-decoration:none}.bangumi-active{background:#657b83;color:#fff}.bangumi-item{position:relative;clear:both;padding:10px 0;border-bottom:1px solid #ddd;min-height:180px}@media screen and (max-width:600px){.bangumi-item{width:100%}}.bangumi-picture{position:absolute;left:0;top:10px;width:110px}.bangumi-picture img{margin:10px 0}.bangumi-info{padding-left:120px;margin-top:10px}.bangumi-meta{font-size:12px;padding-right:10px;height:45px}.bangumi-comments{font-size:12px;margin-top:10px}.bangumi-comments>p{word-break:break-all;text-overflow:ellipsis;overflow:hidden;white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3}.bangumi-pagination{margin-top:15px;text-align:center;margin-bottom:10px}.bangumi-button{padding:5px}.bangumi-button:hover{background:#657b83;color:#fff}.bangumi-hide{display:none}.bangumi-show{display:block}.bangumi-title{font-size:18px}.bangumi-title a{line-height:1;text-decoration:none}.bangumi-info-items{font-size:12px;color:#2fd8d8;padding-top:10px;line-height:1;float:left;width:100%}.bangumi-info-item{display:inline-block;width:13%;border-right:1px solid #2fd8d8;text-align:center;height:34px}.bangumi-info-label{display:block;line-height:12px}.bangumi-info-item em{display:block;padding-top:6px;line-height:17px;font-style:normal;font-weight:700}.bangumi-info-total{padding-top:11px;display:block;line-height:12px;font-weight:700}.bangumi-info-item-score{border-right:1px solid #0000;width:50px}.bangumi-info-label-em{color:transparent;opacity:0;visibility:hidden;line-height:6px!important;padding:0!important}@media (max-width:650px){.bangumi-coin,.bangumi-type{display:none}.bangumi-info-item{width:16%}}@media (max-width:590px){.bangumi-danmaku,.bangumi-wish{display:none}.bangumi-info-item{width:19%}}@media (max-width:520px){.bangumi-doing,.bangumi-play{display:none}.bangumi-info-item{width:24%}}@media (max-width:480px){.bangumi-collect,.bangumi-follow{display:none}.bangumi-info-item{width:30%}}@media (max-width:400px){.bangumi-area{display:none}.bangumi-info-item{width:45%}}
-</style>
-<div class="bangumi-tabs">
-    <a class="bangumi-tab" id="bangumi-tab1" href="javascript:;" rel="external" target="_self" onclick="return false">
-    想看
-    (0)</a>
-    <a class="bangumi-tab" id="bangumi-tab2" href="javascript:;" rel="external" target="_self" onclick="return false">
-        在看
-        (0)</a>
-    <a class="bangumi-tab" id="bangumi-tab3" href="javascript:;" rel="external" target="_self" onclick="return false">
-        已看
-        (0)</a>
-</div>
-<div>
-    <div id="bangumi-item1">
-        
-        <div class="bangumi-pagination">
-    <a class="bangumi-button bangumi-firstpage" href="javascript:;" target="_self" onclick="return false"> 首页</a>
-    <a class="bangumi-button bangumi-previouspage" href="javascript:;" target="_self" onclick="return false">上一页</a>
-    <span class="bangumi-pagenum">2 / 3</span>
-    <a class="bangumi-button bangumi-nextpage" href="javascript:;" target="_self" onclick="return false">下一页</a>
-    <a class="bangumi-button bangumi-lastpage" href="javascript:;" target="_self" onclick="return false">尾页</a>
-</div>
-    </div>
-    <div id="bangumi-item2">
-        
-        <div class="bangumi-pagination">
-    <a class="bangumi-button bangumi-firstpage" href="javascript:;" target="_self" onclick="return false"> 首页</a>
-    <a class="bangumi-button bangumi-previouspage" href="javascript:;" target="_self" onclick="return false">上一页</a>
-    <span class="bangumi-pagenum">2 / 3</span>
-    <a class="bangumi-button bangumi-nextpage" href="javascript:;" target="_self" onclick="return false">下一页</a>
-    <a class="bangumi-button bangumi-lastpage" href="javascript:;" target="_self" onclick="return false">尾页</a>
-</div>
-    </div>
-    <div id="bangumi-item3">
-        
-        <div class="bangumi-pagination">
-    <a class="bangumi-button bangumi-firstpage" href="javascript:;" target="_self" onclick="return false"> 首页</a>
-    <a class="bangumi-button bangumi-previouspage" href="javascript:;" target="_self" onclick="return false">上一页</a>
-    <span class="bangumi-pagenum">2 / 3</span>
-    <a class="bangumi-button bangumi-nextpage" href="javascript:;" target="_self" onclick="return false">下一页</a>
-    <a class="bangumi-button bangumi-lastpage" href="javascript:;" target="_self" onclick="return false">尾页</a>
-</div>
-    </div>
-</div>
-<script>
-    "use strict";/* eslint-disable no-plusplus */(function(){// eslint-disable-next-line func-style
-function a(){this.classList.add("bangumi-active");for(var a=this.siblings(),b=0;b<a.length;b++)a[b].classList.remove("bangumi-active");// 显示对应板块
-var c=this.id.replace("tab","item"),d=document.getElementById(c);d.classList.remove("bangumi-hide"),d.classList.add("bangumi-show"),a=document.getElementById(c).siblings();for(var e=0;e<a.length;e++)a[e].classList.remove("bangumi-show"),a[e].classList.add("bangumi-hide")}Element.prototype.siblings=function(){for(var a=[],b=this.parentNode.children,c=0;c<b.length;c++)b[c]!==this&&a.push(b[c]);return a};for(var b=document.getElementsByClassName("bangumi-tab"),c=0;c<b.length;c++)b[c].onclick=a,b[c].onclick.apply(b[c])})();
-
-    document.getElementsByClassName('bangumi-tab')[1].click();
-    /* eslint-disable no-plusplus, func-style */(function(){var a=Math.ceil;function b(b,c){return`${b+1} / ${a(0==c.length/10?1:a(c.length/10))}`}function c(){const a=this.parentNode.siblings();g(a,0),this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText=b(0,a)}function d(){const a=this.parentNode.siblings();let c=this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText;c=c.substr(0,c.indexOf("/")-1),c=parseInt(c,10)-1,0<c&&c--,g(a,c),this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText=b(c,a)}function e(){const c=this.parentNode.siblings();let d=this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText;d=d.substr(0,d.indexOf("/")-1),d=parseInt(d,10)-1,d<a(c.length/10)-1&&d++,g(c,d),this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText=b(d,c)}function f(){const c=this.parentNode.siblings();g(c,a(c.length/10)-1),this.parentNode.getElementsByClassName("bangumi-pagenum")[0].innerText=b(-1==a(c.length/10)-1?0:a(c.length/10)-1,c)}function g(a,b){for(let c=0;c<a.length;c++)if(Math.floor(c/10)===b){a[c].classList.remove("bangumi-hide");const[b]=a[c].getElementsByTagName("img");b.src=b.getAttribute("data-src")}else a[c].classList.add("bangumi-hide")}const h=document.getElementsByClassName("bangumi-firstpage"),j=document.getElementsByClassName("bangumi-previouspage"),k=document.getElementsByClassName("bangumi-nextpage"),l=document.getElementsByClassName("bangumi-lastpage"),m=document.getElementsByClassName("bangumi-pagenum");for(let b=0;b<h.length;b++){h[b].onclick=c,j[b].onclick=d,k[b].onclick=e,l[b].onclick=f;// set page num
-const g=m[b].parentNode.siblings().length;m[b].innerText=`1 / ${0===a(g/10)?1:a(g/10)}`,h[b].click()}})();
-
-</script>
+<p>此时会发现在远程仓库的Hexo分支中已经推送了绝大部分文件，只有一些被忽略的文件，这些被忽略的并不需要拷贝</p>
+<ol>
+<li><code>_config.yml</code>站点的配置文件，需要拷贝；</li>
+<li><code>themes/</code>主题文件夹，需要拷贝；</li>
+<li><code>source</code>博客文章的.md文件，需要拷贝；</li>
+<li><code>scaffolds/</code>文章的模板，需要拷贝；</li>
+<li><code>package.json</code>安装包的名称，需要拷贝；</li>
+<li><code>.gitignore</code>限定在push时哪些文件可以忽略，需要拷贝；</li>
+<li><code>.git/</code>主题和站点都有，标志这是一个git项目，不需要拷贝；</li>
+<li><code>node_modules/</code>是安装包的目录，在执行<code>npm install</code>的时候会重新生成，不需要拷贝；</li>
+<li><code>public</code>是<code>hexo g</code>生成的静态网页，不需要拷贝；</li>
+<li><code>.deploy_git</code>同上，<code>hexo g</code>也会生成，不需要拷贝；</li>
+<li><code>db.json</code>文件，不需要拷贝。</li>
+</ol>
+<p>其实不需要拷贝的文件正是<code>.gitignore</code>中所忽略的。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>在本地对博客修改（包括修改主题样式、发布新文章等）后：</p>
+<ol>
+<li>依次执行<code>git add .</code>、<code>git commit -m "推送"</code>、<code>git push origin hexo</code>来提交hexo网站源文件，因为我设置了默认hexo分支，直接输入<code>git push</code>即可；</li>
+<li>执行<code>hexo g -d</code>生成静态网页部署至Github上，我使用了gulp插件压缩代码，所以直接输入<code>gulp</code>，<code>hexo d</code>即可。</li>
+</ol>
+<h2 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h2><h3 id="1-配置Hexo环境"><a href="#1-配置Hexo环境" class="headerlink" title="1.配置Hexo环境"></a>1.配置Hexo环境</h3><p>重装电脑后，或者在其它电脑上想修改博客：</p>
+<ol>
+<li>安装git；</li>
+<li>安装Nodejs和npm；</li>
+<li>使用<code>git clone git@github.com:WincerChan/WincerChan.github.io.git</code>将仓库拷贝至本地；</li>
+<li>在文件夹内执行以下命令<code>npm install hexo-cli -g</code>、<code>npm install</code>、<code>npm install hexo-deployer-git</code>。</li>
+</ol>
+<h3 id="2-添加ssh-keys"><a href="#2-添加ssh-keys" class="headerlink" title="2.添加ssh-keys"></a>2.添加ssh-keys</h3><ol>
+<li>在终端下运行：<code>ssh-keygen -t rsa -C "yourname@email.com"</code>，一路回车；</li>
+<li>会在.ssh目录生成<code>id_rsa</code>、<code>id_rsa.pub</code>两个文件，这就是密钥对，id_rsa是私钥，千万不能泄漏出去；</li>
+<li>登录Github，打开「Settings」–&gt;「SSH and GPG keys」，然后点击「new SSH key」，填上任意Title，在Key文本框里粘贴公钥id_rsa.pub文件的内容，注意不要粘贴成<code>id_rsa</code>，最后点击「Add SSH Key」。</li>
+</ol>
 
                 
             </div>
@@ -706,7 +738,7 @@ const g=m[b].parentNode.siblings().length;m[b].innerText=`1 / ${0===a(g/10)?1:a(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/253715/253715.github.io.git/253715/253715.github.io.git/bangumis/index.html">https://github.com/253715/253715.github.io.git/253715/253715.github.io.git/bangumis/index.html</a>
+                    <a href="https://github.com/253715/253715.github.io.git/253715/253715.github.io.git/2022/04/30/%E2%80%9Chexo%E5%A4%87%E4%BB%BD%E2%80%9D/">https://github.com/253715/253715.github.io.git/253715/253715.github.io.git/2022/04/30/%E2%80%9Chexo%E5%A4%87%E4%BB%BD%E2%80%9D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -743,7 +775,11 @@ const g=m[b].parentNode.siblings().length;m[b].innerText=`1 / ${0===a(g/10)?1:a(
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/253715/253715.github.io.git/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -786,7 +822,7 @@ const g=m[b].parentNode.siblings().length;m[b].innerText=`1 / ${0===a(g/10)?1:a(
         repo: '',
         owner: '',
         admin: null,
-        id: '2022-04-30T23-20-58',
+        id: '2022-04-30T20-12-40',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -810,7 +846,7 @@ const g=m[b].parentNode.siblings().length;m[b].innerText=`1 / ${0===a(g/10)?1:a(
 <script src="/253715/253715.github.io.git/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: '',
+    id: 'Sat Apr 30 2022 20:12:40 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -835,9 +871,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://github.com/253715/253715.github.io.git/bangumis/index.html';
-        this.page.identifier = '/253715/253715.github.io.git/bangumis/index.html';
-        this.page.title = '追番列表';
+        this.page.url = 'https://github.com/253715/253715.github.io.git/2022/04/30/%E2%80%9Chexo%E5%A4%87%E4%BB%BD%E2%80%9D/';
+        this.page.identifier = '/253715/253715.github.io.git/2022/04/30/%E2%80%9Chexo%E5%A4%87%E4%BB%BD%E2%80%9D/';
+        this.page.title = '“hexo备份”';
     };
     let disqus_shortname = '';
 
@@ -896,13 +932,13 @@ gitment.render('gitment-content');
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/253715/253715.github.io.git/bangumis/index.html">
+                <a href="/253715/253715.github.io.git/2022/04/30/%E2%80%9Chexo%E5%A4%87%E4%BB%BD%E2%80%9D/">
                     <div class="card-image">
                         
                         
-                        <img src="/253715/253715.github.io.git/medias/featureimages/22.jpg" class="responsive-img" alt="追番列表">
+                        <img src="/253715/253715.github.io.git/medias/featureimages/1.jpg" class="responsive-img" alt="“hexo备份”">
                         
-                        <span class="card-title">追番列表</span>
+                        <span class="card-title">“hexo备份”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -917,13 +953,25 @@ gitment.render('gitment-content');
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            JonQuet
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/253715/253715.github.io.git/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
+                                    博客
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/253715/253715.github.io.git/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -931,16 +979,16 @@ gitment.render('gitment-content');
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/253715/253715.github.io.git/bangumis/index.html">
+                <a href="/253715/253715.github.io.git/2022/04/30/Verio%E8%A7%86%E9%A2%91%E8%AE%B2%E8%A7%A3%E8%AF%B4%E6%98%8E/">
                     <div class="card-image">
                         
                         
-                        <img src="/253715/253715.github.io.git/medias/featureimages/22.jpg" class="responsive-img" alt="追番列表">
+                        <img src="/253715/253715.github.io.git/medias/featureimages/9.jpg" class="responsive-img" alt="spingboot">
                         
-                        <span class="card-title">追番列表</span>
+                        <span class="card-title">spingboot</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -955,13 +1003,28 @@ gitment.render('gitment-content');
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            JonQuet
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/253715/253715.github.io.git/categories/Java%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    Java学习
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/253715/253715.github.io.git/tags/springboot/">
+                        <span class="chip bg-color">springboot</span>
+                    </a>
+                    
+                    <a href="/253715/253715.github.io.git/tags/%E6%88%BF%E5%B1%8B%E5%87%BA%E7%A7%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">房屋出租管理系统</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
