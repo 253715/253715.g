@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>学技术的小凯</title>
   
-  
+  <subtitle>小凯</subtitle>
   <link href="https://github.com/253715/253715.github.io.git/atom.xml" rel="self"/>
   
   <link href="https://github.com/253715/253715.github.io.git/"/>
